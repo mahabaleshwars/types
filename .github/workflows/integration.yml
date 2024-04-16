@@ -1,23 +1,5 @@
 name: Integration
 on:
-  pull_request:
-    branches: [ main ]
-    paths:
-      - '**gradle*'
-      - '**.java'
-      - '**.kt*'
-      - .github/workflows/integration.yml
-      - api/types.api
-      - qodana.yaml
-  push:
-    branches: [ main, release/* ]
-    paths:
-      - '**gradle*'
-      - '**.java'
-      - '**.kt*'
-      - .github/workflows/integration.yml
-      - api/types.api
-      - qodana.yaml
   workflow_dispatch:
 env:
   CACHING: gradle
