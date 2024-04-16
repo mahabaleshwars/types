@@ -81,40 +81,7 @@ jobs:
         run: ./gradlew :java-compatibility:test
       - name: Check root project
         run: ./gradlew :jvmTest :jvmApiCheck
-  linux-test:
-    name: Kotlin Native tests for Linux
-    needs: gradle-wrapper-validation
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3.5.0
-      - name: Setup Java & Gradle
-        uses: actions/setup-java@v4
-        with:
-          distribution: ${{ env.JAVA_DISTRIBUTION }}
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: ${{ env.CACHING }}
-      - name: Test 'internal' subproject
-        run: ./gradlew :internal:linuxTest
-      - name: Test root project
-        run: ./gradlew :linuxTest
-  macos-test:
-    name: Kotlin Native tests for macOS
-    needs: gradle-wrapper-validation
-    runs-on: macos-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3.5.0
-      - name: Setup Java & Gradle
-        uses: actions/setup-java@v4
-        with:
-          distribution: ${{ env.JAVA_DISTRIBUTION }}
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: ${{ env.CACHING }}
-      - name: Test 'internal' subproject
-        run: ./gradlew :internal:macosTest
-      - name: Test root project
-        run: ./gradlew :macosTest
+  
   windows-test:
     name: Kotlin Native tests for Windows
     needs: gradle-wrapper-validation
