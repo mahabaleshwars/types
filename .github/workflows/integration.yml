@@ -58,6 +58,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+          cache-dependency-path: '!**/*.lock'
       - name: Test 'internal' subproject
         run: ./gradlew :internal:jsTest
       - name: Test root project
@@ -75,6 +76,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+          cache-dependency-path: '!**/*.lock'
       - name: Test 'internal' subproject
         run: ./gradlew :internal:jvmTest
       - name: Test 'java-compatibility' subproject
@@ -94,6 +96,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+          cache-dependency-path: '!**/*.lock'
       - name: Test 'internal' subproject
         run: ./gradlew :internal:linuxTest
       - name: Test root project
@@ -111,6 +114,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+          cache-dependency-path: '!**/*.lock'
       - name: Test 'internal' subproject
         run: ./gradlew :internal:macosTest
       - name: Test root project
@@ -128,6 +132,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+          cache-dependency-path: '!**/*.lock'
       - name: Test 'internal' subproject
         run: ./gradlew :internal:windowsTest
       - name: Test root project
