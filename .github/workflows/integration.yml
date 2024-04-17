@@ -108,14 +108,14 @@ jobs:
         run: ./gradlew :internal:windowsTest
       - name: Test root project
         run: ./gradlew :windowsTest
+      - name: Stop Gradle
+        run: ./gradlew --stop
   # ---------- Stage 3 ----------
   dependencies:
     name: Dependency graph
     needs:
       - js-test
       - jvm-checks
-      - linux-test
-      - macos-test
       - static-code-analysis
       - windows-test
     if: github.event_name == 'push'
